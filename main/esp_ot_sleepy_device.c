@@ -59,7 +59,7 @@ static void create_config_network(otInstance *instance)
     linkMode.mDeviceType = false;
     linkMode.mNetworkData = false;
 
-    if (otLinkSetPollPeriod(instance, CONFIG_OPENTHREAD_NETWORK_POLLPERIOD_TIME) != OT_ERROR_NONE) {
+    if (otLinkSetPollPeriod(instance, CONFIG_POLL_PERIOD) != OT_ERROR_NONE) {
         ESP_LOGE(TAG, "Failed to set OpenThread pollperiod.");
         abort();
     }
@@ -180,9 +180,8 @@ static void ot_task_worker(void *aContext)
     ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, periods * 1000));
 #endif
 
-    // TX power and Poll Period must be set before starting the OpenThread CLI.
+    // TX power must be set before starting the OpenThread CLI.
     setTxPower();
-    setPollPeriod(CONFIG_POLL_PERIOD);
 
     // Run the main loop
     esp_openthread_launch_mainloop();
