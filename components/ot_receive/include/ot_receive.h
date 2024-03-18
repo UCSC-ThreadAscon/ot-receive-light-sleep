@@ -58,6 +58,7 @@ void handleMessageError(otMessage *aMessage, otError error);
 
 void checkConnection(otInstance *aInstance);
 otInstance* getInstance();
+void printMeshLocalEid(otInstance *aInstance);
 
 void udpInitReceiver(otUdpReceiver *receiver);
 

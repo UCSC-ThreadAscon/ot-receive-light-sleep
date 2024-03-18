@@ -239,6 +239,8 @@ void app_main(void)
     udpInitReceiver(&receiver);
     udpCreateReceiver(getInstance(), &receiver);
 
+    printMeshLocalEid(getInstance());
+
     /**
      * Keep the "main" thread running on an infinite loop,
      * so the OpenThread worker thread will always be able
