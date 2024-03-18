@@ -20,7 +20,7 @@ menu "OpenThread Receiver Light Sleep"
       range 0 67108863
       default 3000
       help
-          The poll period determines how often the Sleepy End Device will
+          The poll period (in ms) determines how often the Sleepy End Device will
           ask to its parent router for updates on any packets it has received.
 
 endmenu
