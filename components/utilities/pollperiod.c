@@ -1,6 +1,6 @@
 #include "utilities.h"
 
-void setPollPeriod(uint32_t pollPeriod, otInstance *aInstance) {
+void setPollPeriod(uint32_t pollPeriod) {
   otInstance *aInstance = esp_openthread_get_instance();
 
   otLogNotePlat("Poll period is currently %" PRIu32 "",
