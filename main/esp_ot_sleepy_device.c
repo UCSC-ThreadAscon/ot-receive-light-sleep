@@ -180,8 +180,9 @@ static void ot_task_worker(void *aContext)
     ESP_ERROR_CHECK(esp_timer_start_periodic(periodic_timer, periods * 1000));
 #endif
 
-    // TX power must be set before starting the OpenThread CLI.
+    // TX power and Poll Period must be set before starting the OpenThread CLI.
     setTxPower();
+    setPollPeriod();
 
     // Run the main loop
     esp_openthread_launch_mainloop();
