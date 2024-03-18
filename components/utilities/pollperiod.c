@@ -14,7 +14,7 @@ void setPollPeriod(uint32_t pollPeriod) {
 
   uint32_t newPollPeriod = otLinkGetPollPeriod(OT_INSTANCE);
   assert(newPollPeriod == pollPeriod);
-  otLogNotePlat("Poll period has now been set to %" PRIu32 "", newPollPeriod);
+  otLogNotePlat("Poll period has now been set to %" PRIu32 ".", newPollPeriod);
 
   return;
 }
