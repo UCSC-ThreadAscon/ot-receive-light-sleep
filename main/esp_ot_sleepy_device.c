@@ -46,7 +46,7 @@
 #error "Openthread sleepy device is only supported for the SoCs which have IEEE 802.15.4 module"
 #endif
 
-#define TAG "ot_esp_power_save"
+#define TAG "ot_receive_light_sleep"
 
 static esp_pm_lock_handle_t s_cli_pm_lock = NULL;
 
@@ -63,6 +63,8 @@ static void create_config_network(otInstance *instance)
         ESP_LOGE(TAG, "Failed to set OpenThread pollperiod.");
         abort();
     }
+    ESP_LOGE(TAG, "Poll period is currently at %" PRIu32 ".",
+             otLinkGetPollPeriod(instance));
 
     if (otThreadSetLinkMode(instance, linkMode) != OT_ERROR_NONE) {
         ESP_LOGE(TAG, "Failed to set OpenThread linkmode.");
