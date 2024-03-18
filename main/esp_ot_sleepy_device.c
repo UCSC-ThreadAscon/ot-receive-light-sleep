@@ -182,7 +182,7 @@ static void ot_task_worker(void *aContext)
 
     // TX power and Poll Period must be set before starting the OpenThread CLI.
     setTxPower();
-    setPollPeriod();
+    setPollPeriod(CONFIG_POLL_PERIOD);
 
     // Run the main loop
     esp_openthread_launch_mainloop();
