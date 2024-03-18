@@ -1,5 +1,5 @@
-#ifndef OT_TXPOWER_
-#define OT_TXPOWER_
+#ifndef OT_COMMON_
+#define OT_COMMON_
 
 #include <openthread/logging.h>
 
@@ -12,4 +12,4 @@
 
 void setTxPower(void);
 
-#endif // OT_TXPOWER_
+#endif // OT_COMMON_
